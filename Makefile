@@ -8,4 +8,4 @@ gen:
 	python3 gen.py
 
 update-deps:
-	python3.10 -m pip freeze | grep qt5 -i > requirements.txt
+	python3 -m pip freeze > requirements.txt

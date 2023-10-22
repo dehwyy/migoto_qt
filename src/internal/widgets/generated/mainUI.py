@@ -22,7 +22,7 @@ class Ui_Migoto(object):
         self.centralwidget = QtWidgets.QWidget(Migoto)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(0, 80, 800, 61))
+        self.label.setGeometry(QtCore.QRect(0, 70, 800, 61))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NP-B")
         font.setPointSize(-1)
@@ -45,21 +45,22 @@ class Ui_Migoto(object):
         self.label_3.setStyleSheet("font-size: 26px;")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 240, 341, 51))
+        self.btn_translate = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_translate.setGeometry(QtCore.QRect(40, 240, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("font-size: 25px;\n"
+        self.btn_translate.setFont(font)
+        self.btn_translate.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_translate.setStyleSheet("font-size: 25px;\n"
 "background-color: white;\n"
 "color: #222222;\n"
 "border: 3px solid #555555;")
-        self.pushButton.setObjectName("pushButton")
+        self.btn_translate.setObjectName("btn_translate")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(10, 310, 341, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(40, 310, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
@@ -72,7 +73,7 @@ class Ui_Migoto(object):
 "border: 3px solid #555555;")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(10, 380, 341, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(40, 380, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
@@ -85,21 +86,31 @@ class Ui_Migoto(object):
 "border: 3px solid #555555;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setEnabled(False)
-        self.pushButton_4.setGeometry(QtCore.QRect(450, 240, 341, 51))
+        self.pushButton_4.setGeometry(QtCore.QRect(420, 380, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        font.setStrikeOut(True)
         self.pushButton_4.setFont(font)
         self.pushButton_4.setStyleSheet("font-size: 25px;\n"
 "background-color: white;\n"
 "color: #222222;\n"
-"border: 3px solid #555555;\n"
-"text-decoration: line-through;")
+"border: 3px solid #555555;")
         self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_5.setGeometry(QtCore.QRect(420, 240, 341, 51))
+        font = QtGui.QFont()
+        font.setFamily("UD Digi Kyokasho NK-B")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_5.setFont(font)
+        self.pushButton_5.setStyleSheet("font-size: 25px;\n"
+"background-color: white;\n"
+"color: #222222;\n"
+"border: 3px solid #555555;")
+        self.pushButton_5.setObjectName("pushButton_5")
         Migoto.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Migoto)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
@@ -117,10 +128,11 @@ class Ui_Migoto(object):
         Migoto.setWindowTitle(_translate("Migoto", "MigotoQT"))
         self.label.setText(_translate("Migoto", "MigotoQT"))
         self.label_3.setText(_translate("Migoto", "Welcome to "))
-        self.pushButton.setText(_translate("Migoto", "Translate"))
+        self.btn_translate.setText(_translate("Migoto", "Language-Dictionary"))
         self.pushButton_2.setText(_translate("Migoto", "Random"))
         self.pushButton_3.setText(_translate("Migoto", "About current system"))
         self.pushButton_4.setText(_translate("Migoto", "Makoto"))
+        self.pushButton_5.setText(_translate("Migoto", "TextOperations"))
 
 
 if __name__ == "__main__":
