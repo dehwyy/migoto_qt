@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Translation</class>
- <widget class="QWidget" name="Translation">
+ <class>TextOperations</class>
+ <widget class="QWidget" name="TextOperations">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Makoto/Translation</string>
+   <string>Makoto/TextOperations</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #333333;
@@ -78,45 +78,6 @@ border-radius: 10px</string>
     <string>Compile</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="output">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>330</y>
-     <width>341</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>UD Digi Kyokasho NK-B</family>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-size: 17px;
-outline: none;
-border-radius: 10px;
-background-color: #fff;
-color: black;
-padding: 5px 9px;s</string>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'UD Digi Kyokasho NK-B'; font-size:17px; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_input">
    <property name="geometry">
     <rect>
@@ -169,33 +130,7 @@ p, li { white-space: pre-wrap; }
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="input">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>170</y>
-     <width>341</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>UD Digi Kyokasho NK-B</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: white;
-color: black;
-outline: none;
-border-radius: 10px;
-padding: 5px 9px;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_random_str">
+  <widget class="QPushButton" name="btn_change_order">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -223,7 +158,7 @@ border: 3px solid #555555;
 border-radius: 10px</string>
    </property>
    <property name="text">
-    <string>Generate random string</string>
+    <string>Change symbol order</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_length_str">
@@ -316,7 +251,7 @@ border: 3px solid #555555;
 border-radius: 10px</string>
    </property>
    <property name="text">
-    <string>Remove Symbol from string</string>
+    <string>Remove random Symbol</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_makoto_camel">
@@ -350,35 +285,62 @@ border-radius: 10px</string>
     <string>True CamelCase</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_back">
+  <widget class="QTextBrowser" name="output">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>450</y>
-     <width>191</width>
+     <x>420</x>
+     <y>330</y>
+     <width>341</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: white;
+color: black;
+outline: none;
+border-radius: 10px;
+padding: 5px 9px;</string>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Comic Sans MS'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:131073;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>170</y>
+     <width>341</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>UD Digi Kyokasho NK-B</family>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>Comic Sans MS</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
    <property name="styleSheet">
-    <string notr="true">font-size: 18px;
-background-color: #ff00d2;
-color: white;
-border: 3px solid #555555;
-border-radius: 10px</string>
+    <string notr="true">background: white;
+color: black;
+outline: none;
+border-radius: 10px;
+padding: 5px 9px;</string>
    </property>
    <property name="text">
-    <string>Back</string>
+    <string/>
    </property>
   </widget>
  </widget>
