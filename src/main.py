@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QIcon
 from internal.widgets.generated.mainUI import Ui_Migoto
 from internal.widgets.dict import Dict
+from internal.widgets.random import Random
 from config import DEFAULT_WINDOW_SIZE
 from dotenv import load_dotenv
 
@@ -21,6 +22,7 @@ class App(QMainWindow,  Ui_Migoto):
         # init UI inherited by UI_Migoto
         self.setupUi(self)
         self.btn_translate.clicked.connect(lambda: self.w_dict.show())
+        self.btn_random.clicked.connect(lambda: self.w_random.show())
 
     def init_ui(self):
         # main window
@@ -28,7 +30,9 @@ class App(QMainWindow,  Ui_Migoto):
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
         # init other widgets
+        # `w` stays for `Widget`
         self.w_dict = Dict()
+        self.w_random = Random()
 
 
 if __name__ == "__main__":

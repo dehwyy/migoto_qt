@@ -22,7 +22,7 @@ color: white;
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="header">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -51,7 +51,7 @@ color: white;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="header_2">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -108,7 +108,7 @@ border: 3px solid #555555;</string>
      <string>Language-Dictionary</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btn_random">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -125,6 +125,9 @@ border: 3px solid #555555;</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">font-size: 25px;
 background-color: white;
@@ -135,7 +138,7 @@ border: 3px solid #555555;</string>
      <string>Random</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btn_os">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -152,6 +155,9 @@ border: 3px solid #555555;</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">font-size: 25px;
 background-color: white;
@@ -162,7 +168,7 @@ border: 3px solid #555555;</string>
      <string>About current system</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="btn_makoto">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -179,6 +185,9 @@ border: 3px solid #555555;</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">font-size: 25px;
 background-color: white;
@@ -189,7 +198,7 @@ border: 3px solid #555555;</string>
      <string>Makoto</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="btn_textops">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -205,6 +214,9 @@ border: 3px solid #555555;</string>
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">font-size: 25px;

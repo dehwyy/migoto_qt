@@ -23,7 +23,6 @@ class Dict(QWidget,  Ui_Dictionary):
     def init_ui(self):
         self.setWindowIcon(QIcon('icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
-        self.setWindowIconText("Dictionary")
 
     # actions
     def onClickButtonTranslate(self):

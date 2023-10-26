@@ -18,8 +18,8 @@ class Ui_Random(object):
         Random.setStyleSheet("background-color: #333333;\n"
 "color: white;\n"
 "")
-        self.label = QtWidgets.QLabel(Random)
-        self.label.setGeometry(QtCore.QRect(0, 40, 800, 61))
+        self.header = QtWidgets.QLabel(Random)
+        self.header.setGeometry(QtCore.QRect(0, 40, 800, 61))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NP-B")
         font.setPointSize(-1)
@@ -27,141 +27,173 @@ class Ui_Random(object):
         font.setItalic(False)
         font.setUnderline(True)
         font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setStyleSheet("font-size: 46px;a=")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.pushButton_6 = QtWidgets.QPushButton(Random)
-        self.pushButton_6.setGeometry(QtCore.QRect(40, 170, 341, 51))
+        self.header.setFont(font)
+        self.header.setStyleSheet("font-size: 46px;a=")
+        self.header.setAlignment(QtCore.Qt.AlignCenter)
+        self.header.setObjectName("header")
+        self.rand_int = QtWidgets.QPushButton(Random)
+        self.rand_int.setGeometry(QtCore.QRect(40, 170, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_6.setFont(font)
-        self.pushButton_6.setStyleSheet("font-size: 18px;\n"
+        self.rand_int.setFont(font)
+        self.rand_int.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rand_int.setStyleSheet("font-size: 18px;\n"
 "background-color: white;\n"
 "color: #222222;\n"
 "border: 3px solid #555555;\n"
 "border-radius: 10px")
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(Random)
-        self.pushButton_7.setGeometry(QtCore.QRect(420, 170, 341, 51))
+        self.rand_int.setObjectName("rand_int")
+        self.rand_str = QtWidgets.QPushButton(Random)
+        self.rand_str.setGeometry(QtCore.QRect(420, 170, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_7.setFont(font)
-        self.pushButton_7.setStyleSheet("font-size: 18px;\n"
+        self.rand_str.setFont(font)
+        self.rand_str.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rand_str.setStyleSheet("font-size: 18px;\n"
 "background-color: white;\n"
 "color: #222222;\n"
 "border: 3px solid #555555;\n"
 "border-radius: 10px")
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.pushButton_8 = QtWidgets.QPushButton(Random)
-        self.pushButton_8.setGeometry(QtCore.QRect(40, 230, 341, 51))
+        self.rand_str.setObjectName("rand_str")
+        self.rand_uuid = QtWidgets.QPushButton(Random)
+        self.rand_uuid.setGeometry(QtCore.QRect(40, 230, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_8.setFont(font)
-        self.pushButton_8.setStyleSheet("font-size: 18px;\n"
+        self.rand_uuid.setFont(font)
+        self.rand_uuid.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rand_uuid.setStyleSheet("font-size: 18px;\n"
 "background-color: white;\n"
 "color: #222222;\n"
 "border: 3px solid #555555;\n"
 "border-radius: 10px")
-        self.pushButton_8.setObjectName("pushButton_8")
-        self.pushButton_9 = QtWidgets.QPushButton(Random)
-        self.pushButton_9.setGeometry(QtCore.QRect(420, 230, 341, 51))
+        self.rand_uuid.setObjectName("rand_uuid")
+        self.rand_float = QtWidgets.QPushButton(Random)
+        self.rand_float.setGeometry(QtCore.QRect(420, 230, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_9.setFont(font)
-        self.pushButton_9.setStyleSheet("font-size: 18px;\n"
+        self.rand_float.setFont(font)
+        self.rand_float.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rand_float.setStyleSheet("font-size: 18px;\n"
 "background-color: white;\n"
 "color: #222222;\n"
 "border: 3px solid #555555;\n"
 "border-radius: 10px;")
-        self.pushButton_9.setObjectName("pushButton_9")
-        self.textEdit_2 = QtWidgets.QTextEdit(Random)
-        self.textEdit_2.setEnabled(False)
-        self.textEdit_2.setGeometry(QtCore.QRect(40, 450, 721, 41))
+        self.rand_float.setObjectName("rand_float")
+        self.rand_bool = QtWidgets.QPushButton(Random)
+        self.rand_bool.setGeometry(QtCore.QRect(40, 290, 341, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.textEdit_2.setFont(font)
-        self.textEdit_2.setAutoFillBackground(False)
-        self.textEdit_2.setStyleSheet("font-size: 17px;\n"
+        self.rand_bool.setFont(font)
+        self.rand_bool.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rand_bool.setStyleSheet("font-size: 18px;\n"
+"background-color: white;\n"
+"color: #222222;\n"
+"border: 3px solid #555555;\n"
+"border-radius: 10px;")
+        self.rand_bool.setObjectName("rand_bool")
+        self.label_output = QtWidgets.QLabel(Random)
+        self.label_output.setGeometry(QtCore.QRect(40, 400, 721, 21))
+        font = QtGui.QFont()
+        font.setFamily("UD Digi Kyokasho NK-B")
+        font.setPointSize(-1)
+        self.label_output.setFont(font)
+        self.label_output.setStyleSheet("font-size: 22px;\n"
+"")
+        self.label_output.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_output.setObjectName("label_output")
+        self.rand_date = QtWidgets.QPushButton(Random)
+        self.rand_date.setGeometry(QtCore.QRect(420, 290, 341, 51))
+        font = QtGui.QFont()
+        font.setFamily("UD Digi Kyokasho NK-B")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.rand_date.setFont(font)
+        self.rand_date.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.rand_date.setStyleSheet("font-size: 18px;\n"
+"background-color: white;\n"
+"color: #222222;\n"
+"border: 3px solid #555555;\n"
+"border-radius: 10px;\n"
+"")
+        self.rand_date.setObjectName("rand_date")
+        self.output = QtWidgets.QTextBrowser(Random)
+        self.output.setGeometry(QtCore.QRect(40, 430, 601, 51))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.output.setFont(font)
+        self.output.setStyleSheet("background: white;\n"
+"color: black;\n"
 "outline: none;\n"
 "border-radius: 10px;\n"
-"background-color: #fff;\n"
-"color: black;\n"
-"padding: 5px 9px;s")
-        self.textEdit_2.setObjectName("textEdit_2")
-        self.pushButton_10 = QtWidgets.QPushButton(Random)
-        self.pushButton_10.setGeometry(QtCore.QRect(40, 290, 341, 51))
+"padding: 5px 9px;")
+        self.output.setObjectName("output")
+        self.btn_copy = QtWidgets.QPushButton(Random)
+        self.btn_copy.setGeometry(QtCore.QRect(650, 430, 111, 51))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_10.setFont(font)
-        self.pushButton_10.setStyleSheet("font-size: 18px;\n"
-"background-color: white;\n"
-"color: #222222;\n"
+        self.btn_copy.setFont(font)
+        self.btn_copy.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_copy.setStyleSheet("font-size: 18px;\n"
+"background-color: #4629f2;\n"
+"color: white;\n"
 "border: 3px solid #555555;\n"
-"border-radius: 10px;")
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.label_3 = QtWidgets.QLabel(Random)
-        self.label_3.setGeometry(QtCore.QRect(40, 420, 721, 21))
+"border-radius: 10px")
+        self.btn_copy.setObjectName("btn_copy")
+        self.label_oncopy = QtWidgets.QLabel(Random)
+        self.label_oncopy.setEnabled(True)
+        self.label_oncopy.setGeometry(QtCore.QRect(650, 400, 111, 20))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("font-size: 22px;\n"
+        self.label_oncopy.setFont(font)
+        self.label_oncopy.setStyleSheet("font-size: 18px;\n"
 "")
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.pushButton_12 = QtWidgets.QPushButton(Random)
-        self.pushButton_12.setGeometry(QtCore.QRect(420, 290, 341, 51))
-        font = QtGui.QFont()
-        font.setFamily("UD Digi Kyokasho NK-B")
-        font.setPointSize(-1)
-        font.setBold(True)
-        font.setWeight(75)
-        self.pushButton_12.setFont(font)
-        self.pushButton_12.setStyleSheet("font-size: 18px;\n"
-"background-color: white;\n"
-"color: #222222;\n"
-"border: 3px solid #555555;\n"
-"border-radius: 10px;")
-        self.pushButton_12.setObjectName("pushButton_12")
+        self.label_oncopy.setText("")
+        self.label_oncopy.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_oncopy.setObjectName("label_oncopy")
 
         self.retranslateUi(Random)
         QtCore.QMetaObject.connectSlotsByName(Random)
 
     def retranslateUi(self, Random):
         _translate = QtCore.QCoreApplication.translate
-        Random.setWindowTitle(_translate("Random", "Form"))
-        self.label.setText(_translate("Random", "Migoto/OS"))
-        self.pushButton_6.setText(_translate("Random", "Name of the operating system"))
-        self.pushButton_7.setText(_translate("Random", "String"))
-        self.pushButton_8.setText(_translate("Random", "Current process’s user id."))
-        self.pushButton_9.setText(_translate("Random", "Float"))
-        self.textEdit_2.setHtml(_translate("Random", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        Random.setWindowTitle(_translate("Random", "Migoto/Random"))
+        self.header.setText(_translate("Random", "Migoto/Random"))
+        self.rand_int.setText(_translate("Random", "Int"))
+        self.rand_str.setText(_translate("Random", "String"))
+        self.rand_uuid.setText(_translate("Random", "UUID"))
+        self.rand_float.setText(_translate("Random", "Float"))
+        self.rand_bool.setText(_translate("Random", "Bool"))
+        self.label_output.setText(_translate("Random", "Output"))
+        self.rand_date.setText(_translate("Random", "Date"))
+        self.output.setHtml(_translate("Random", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'UD Digi Kyokasho NK-B\'; font-size:17px; font-weight:600; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p></body></html>"))
-        self.pushButton_10.setText(_translate("Random", "Bool"))
-        self.label_3.setText(_translate("Random", "Output"))
-        self.pushButton_12.setText(_translate("Random", "Date"))
+"</style></head><body style=\" font-family:\'Comic Sans MS\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:131073;\"><br /></p></body></html>"))
+        self.btn_copy.setText(_translate("Random", "COPY"))
 
 
 if __name__ == "__main__":
