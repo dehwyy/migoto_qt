@@ -119,7 +119,7 @@ class Ui_Dictionary(object):
 
     def retranslateUi(self, Dictionary):
         _translate = QtCore.QCoreApplication.translate
-        Dictionary.setWindowTitle(_translate("Dictionary", "Form"))
+        Dictionary.setWindowTitle(_translate("Dictionary", "Migoto/Dictionary"))
         self.header.setText(_translate("Dictionary", "Migoto/Dictionary"))
         self.btn_translate.setText(_translate("Dictionary", "Translate"))
         self.label_input.setText(_translate("Dictionary", "Input"))
@@ -130,7 +130,7 @@ class Ui_Dictionary(object):
         self.output.setHtml(_translate("Dictionary", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Comic Sans MS\'; font-size:10pt; font-weight:400; font-style:normal; letter-spacing:-6px;\">\n"
+"</style></head><body style=\" font-family:\'Comic Sans MS\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:131073;\"><br /></p></body></html>"))
 
 

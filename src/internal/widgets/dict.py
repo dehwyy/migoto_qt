@@ -1,8 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QDialog
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QIcon
 from internal.widgets.generated.dictUI import Ui_Dictionary
 from config import DEFAULT_WINDOW_SIZE
-import sqlite3
+from internal.lib.errors import InvalidInputError
 from os import getenv
 import requests as req
 
@@ -16,76 +17,37 @@ class Dict(QWidget,  Ui_Dictionary):
         # init UI inherited by UI_Migoto
         self.setupUi(self)
 
-        # connect to db
-        self.init_db()
-
         # setup actions
         self.btn_translate.clicked.connect(self.onClickButtonTranslate)
 
     def init_ui(self):
+        self.setWindowIcon(QIcon('icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
-
-    # ! db operations
-    def init_db(self):
-        db_connection = self.get_sqlite3_connection()
-
-        # create table if not exists
-        #
-        # ________________Dictionary____________________
-        # `id`:      `int`   `primary key;autoincrement`
-        # `api_key`: `text`                              @see `https://yandex.com/dev/dictionary/keys/get`
-        # ______________________________________________
-        db_connection.execute(
-            "CREATE TABLE IF NOT EXISTS dictionary (id INTEGER PRIMARY KEY AUTOINCREMENT, api_key TEXT)")
-
-        db_connection.execute(
-            "INSERT INTO dictionary (api_key) VALUES (?)", ("dict.1.1.20231022T070342Z.ed96950eca1b7bd5.2092598dc924cb780f0086537440ff74fa15bccf",))
-
-        # submit queries
-        db_connection.commit()
-
-        # close connection
-        db_connection.close()
-
-    # get api_key from db
-    def get_api_key(self) -> str:
-        conn = self.get_sqlite3_connection()
-        res = conn.execute(
-            "SELECT api_key FROM dictionary").fetchone()[0]
-
-        if res is None:
-            raise ApiKeyError("API key not provided")
-        return res
-
-    def get_sqlite3_connection(self) -> sqlite3.Connection:
-        db_connection = sqlite3.connect(
-            "src/internal/database/user.sqlite")
-        return db_connection
+        self.setWindowIconText("Dictionary")
 
     # actions
     def onClickButtonTranslate(self):
         text = self.input.text().lower()
 
-        result = self.get_word(text)
-        self.output.setText(result)
+        try:
+            result = self.get_word(text)
+            self.output.setText(result)
+        except:
+            self.output.setText(
+                f'Error occurred when trying to find word "{text}"')
 
     # indirect used fn
     def get_word(self, word: str) -> str:
         # @see `https://yandex.com/dev/dictionary/doc/dg/reference/lookup.html`
 
         key = getenv("YANDEX_API_KEY")
-        if not getenv("DEV"):
-            try:
-                key = self.get_api_key()
+        lang = ""
+        try:
+            lang = self.infer_language(word)
+        except InvalidInputError as e:
+            return str(e)
 
-            except ApiKeyError as e:
-                print(e)
-                return
-            except Exception as e:
-                print(f"unknown error occuried {e}")
-                return
-
-        url = f"https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key={key}&lang={self.infer_language(word)}&text={word}"
+        url = f"https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key={key}&lang={lang}&text={word}"
 
         response = req.get(url)
         dict_body_response = response.json()
@@ -103,6 +65,9 @@ class Dict(QWidget,  Ui_Dictionary):
         return ", ".join(result_words) if result_words else [f"Sorry, I don't know word `${word}`"]
 
     def infer_language(self, word: str) -> str:
+        if len(word) == 0:
+            raise InvalidInputError("Input is empty, please provide a word.")
+
         first_letter = word[0]
 
         if ord("a") <= ord(first_letter) <= ord("z"):
@@ -112,11 +77,6 @@ class Dict(QWidget,  Ui_Dictionary):
 
         # default translation
         return "en-ru"
-
-
-# Custom exception. Should be raised when ApiKey is required but not provided (not stored in db)
-class ApiKeyError(Exception):
-    pass
 
 
 if __name__ == "__main__":
