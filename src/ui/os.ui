@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Migoto/OS</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #333333;
 color: white;
 </string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="header">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -47,7 +47,7 @@ color: white;
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="btn_osname">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -75,7 +75,7 @@ border-radius: 10px</string>
     <string>Name of the operating system</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_8">
+  <widget class="QPushButton" name="btn_pid">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -103,50 +103,11 @@ border-radius: 10px</string>
     <string>Current process’s user id.</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
+  <widget class="QLabel" name="label_output">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>380</y>
-     <width>721</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>UD Digi Kyokasho NK-B</family>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-size: 17px;
-outline: none;
-border-radius: 10px;
-background-color: #fff;
-color: black;
-padding: 5px 9px;s</string>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'UD Digi Kyokasho NK-B'; font-size:17px; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>350</y>
+     <y>400</y>
      <width>721</width>
      <height>21</height>
     </rect>
@@ -168,7 +129,7 @@ p, li { white-space: pre-wrap; }
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_12">
+  <widget class="QPushButton" name="btn_home">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -196,7 +157,7 @@ border-radius: 10px;</string>
     <string>Home directory</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_13">
+  <widget class="QPushButton" name="btn_user">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -221,7 +182,39 @@ border: 3px solid #555555;
 border-radius: 10px;</string>
    </property>
    <property name="text">
-    <string>???</string>
+    <string>Current user login</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="output">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>430</y>
+     <width>731</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: white;
+color: black;
+outline: none;
+border-radius: 10px;
+padding: 5px 9px;</string>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Comic Sans MS'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:131073;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

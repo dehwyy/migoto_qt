@@ -30,7 +30,6 @@ class Random(QWidget,  Ui_Random):
     def init_ui(self):
         self.setWindowIcon(QIcon('icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
-        pass
 
     # ! actions
 
