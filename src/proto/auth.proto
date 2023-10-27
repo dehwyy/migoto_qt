@@ -1,0 +1,44 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+package auth;
+
+
+service Auth {
+  rpc SignUp(SignUpRequest) returns (AuthResponse);
+  rpc SignIn(SignInRequest) returns (AuthResponse);
+}
+
+message SignUpRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+}
+
+message SignInRequest {
+  // Credentials: if User.Provider == local (db) @see /libs/models/user_data.go
+  message UserCredentials {
+    oneof unique_identifier {
+      string email = 101;
+      string username = 102;
+    }
+    string password = 103;
+  }
+  //
+  message UserOAuth2 {
+    string provider = 200;
+    optional string code = 201; // could be provided on direct authorization
+  }
+
+
+  oneof auth_method {
+    UserCredentials credentials = 1; // should be provided if SignIn not via OAuth2
+    UserOAuth2 oauth2 = 2;
+    google.protobuf.Empty empty = 3; // via AuthoizationHeader
+  }
+}
+
+message AuthResponse {
+  string userId = 1;
+  string username = 2;
+}
