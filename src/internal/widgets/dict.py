@@ -4,7 +4,6 @@ from PyQt5.QtGui import QIcon
 from internal.widgets.generated.dictUI import Ui_Dictionary
 from config import DEFAULT_WINDOW_SIZE
 from internal.lib.errors import InvalidInputError
-from os import getenv
 import requests as req
 
 
@@ -39,7 +38,7 @@ class Dict(QWidget,  Ui_Dictionary):
     def get_word(self, word: str) -> str:
         # @see `https://yandex.com/dev/dictionary/doc/dg/reference/lookup.html`
 
-        key = getenv("YANDEX_API_KEY")
+        key = "dict.1.1.20231022T070342Z.ed96950eca1b7bd5.2092598dc924cb780f0086537440ff74fa15bccf"
         lang = ""
         try:
             lang = self.infer_language(word)

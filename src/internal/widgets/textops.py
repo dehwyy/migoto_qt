@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 from random import randint, shuffle
 from internal.widgets.generated.textopsUI import Ui_TextOperations
 from config import DEFAULT_WINDOW_SIZE
@@ -29,15 +29,15 @@ class TextOps(QWidget,  Ui_TextOperations):
         # ! setup listeners
         # mode setters
         self.btn_remove_symbol.clicked.connect(
-            lambda: self.set_mode(OPERATIONS["REMOVE_SYMBOL"]))
+            lambda: self.set_mode(self.btn_remove_symbol, OPERATIONS["REMOVE_SYMBOL"]))
         self.btn_change_order.clicked.connect(
-            lambda: self.set_mode(OPERATIONS["CHANGE_ORDER"]))
+            lambda: self.set_mode(self.btn_change_order, OPERATIONS["CHANGE_ORDER"]))
         self.btn_length_str.clicked.connect(
-            lambda: self.set_mode(OPERATIONS["GET_LENGTH"]))
+            lambda: self.set_mode(self.btn_length_str, OPERATIONS["GET_LENGTH"]))
         self.btn_reverse_str.clicked.connect(
-            lambda: self.set_mode(OPERATIONS["REVERSE"]))
+            lambda: self.set_mode(self.btn_reverse_str, OPERATIONS["REVERSE"]))
         self.btn_makoto_camel.clicked.connect(
-            lambda: self.set_mode(OPERATIONS["TRUE_CAMEL_CASE"]))
+            lambda: self.set_mode(self.btn_makoto_camel, OPERATIONS["TRUE_CAMEL_CASE"]))
 
         # compile
         self.btn_compile.clicked.connect(self.compile)
@@ -103,8 +103,28 @@ class TextOps(QWidget,  Ui_TextOperations):
         except:
             self.output.setText(fallback)
 
-    def set_mode(self, text):
+    def set_mode(self, btn_self: QPushButton, text: str) -> None:
+        BASE_STYLE_SHEET = """
+            font-size: 18px;
+            background-color: white;
+            color: #222222;
+            border: 3px solid #555555;
+            border-radius: 10px;
+        """
+
+        # reset all colors
+        self.btn_change_order.setStyleSheet(BASE_STYLE_SHEET)
+        self.btn_length_str.setStyleSheet(BASE_STYLE_SHEET)
+        self.btn_reverse_str.setStyleSheet(BASE_STYLE_SHEET)
+        self.btn_remove_symbol.setStyleSheet(BASE_STYLE_SHEET)
+        self.btn_makoto_camel.setStyleSheet(BASE_STYLE_SHEET)
+
+        # set new mode val (as enum member)
         self.selected_mode = text
+
+        # set different color for pressed button
+        btn_self.setStyleSheet(BASE_STYLE_SHEET +
+                               "\nbackground-color: #ff00d2;")
 
 
 if __name__ == "__main__":

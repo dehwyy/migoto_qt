@@ -60,4 +60,3 @@ if __name__ == "__main__":
     t.show()
 
     sys.exit(app.exec_())
-    print("HER")

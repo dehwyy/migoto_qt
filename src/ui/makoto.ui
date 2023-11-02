@@ -264,47 +264,11 @@ border-radius: 10px</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>240</y>
-       <width>191</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>15</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">padding-left: 20px;</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>GetItems</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>CreateItem</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>GetTags</string>
-      </property>
-     </item>
-    </widget>
     <widget class="QLabel" name="header_6">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>160</y>
+       <y>130</y>
        <width>181</width>
        <height>71</height>
       </rect>
@@ -324,6 +288,128 @@ border-radius: 10px</string>
      </property>
      <property name="text">
       <string>Select option</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_copy">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>210</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>UD Digi Kyokasho NK-B</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 18px;
+background-color: #4629f2;
+color: white;
+border: 3px solid #555555;
+border-radius: 10px</string>
+     </property>
+     <property name="text">
+      <string>CreateItem</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_copy_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>260</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>UD Digi Kyokasho NK-B</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 18px;
+background-color: #4629f2;
+color: white;
+border: 3px solid #555555;
+border-radius: 10px</string>
+     </property>
+     <property name="text">
+      <string>GetItems</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_copy_3">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>20</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>UD Digi Kyokasho NK-B</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 18px;
+background-color: #ff00d2;
+color: white;
+border: 3px solid #555555;
+border-radius: 10px</string>
+     </property>
+     <property name="text">
+      <string>Log out</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="header_7">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>UD Digi Kyokasho NP-B</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 18px;</string>
+     </property>
+     <property name="text">
+      <string>Nickname here</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
