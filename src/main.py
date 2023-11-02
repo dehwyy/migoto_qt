@@ -1,22 +1,22 @@
 # internal
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
-from PyQt5.QtGui import QIcon, QPixmap
-from internal.widgets.generated.mainUI import Ui_Migoto
-from config import DEFAULT_WINDOW_SIZE
+from internal.widgets.makoto import Makoto
+from internal.widgets.calendar import Calendar
+from internal.widgets.textops import TextOps
+from internal.widgets.os import OS
+from internal.widgets.random import Random
+from internal.widgets.dict import Dict
 from internal.lib.database import Database
+from config import DEFAULT_WINDOW_SIZE
+from internal.widgets.generated.mainUI import Ui_Migoto
+from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+import sys
 
 # widgets
-from internal.widgets.dict import Dict
-from internal.widgets.random import Random
-from internal.widgets.os import OS
-from internal.widgets.textops import TextOps
-from internal.widgets.calendar import Calendar
-from internal.widgets.makoto import Makoto
 
 
 # init db
-database = Database("src/internal/database/makoto.sqlite")
+database = Database("internal/database/makoto.sqlite")
 
 
 class App(QMainWindow,  Ui_Migoto):
