@@ -1,5 +1,5 @@
 run:
-	python3.11.exe src/main.py
+	cd src && python3.11.exe main.py
 gen:
 	python3 gen.py
 prod:

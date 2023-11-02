@@ -44,11 +44,26 @@ class Ui_Calendar(object):
         self.label_oncopy.setAlignment(QtCore.Qt.AlignCenter)
         self.label_oncopy.setObjectName("label_oncopy")
         self.calendarWidget = QtWidgets.QCalendarWidget(Calendar)
-        self.calendarWidget.setGeometry(QtCore.QRect(70, 120, 661, 321))
+        self.calendarWidget.setGeometry(QtCore.QRect(70, 120, 661, 301))
         self.calendarWidget.setStyleSheet("color: black;\n"
 "background-color: white;")
         self.calendarWidget.setGridVisible(True)
         self.calendarWidget.setObjectName("calendarWidget")
+        self.btn_save_data = QtWidgets.QPushButton(Calendar)
+        self.btn_save_data.setGeometry(QtCore.QRect(70, 450, 661, 41))
+        font = QtGui.QFont()
+        font.setFamily("UD Digi Kyokasho NK-B")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btn_save_data.setFont(font)
+        self.btn_save_data.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_save_data.setStyleSheet("font-size: 18px;\n"
+"background-color: #4629f2;\n"
+"color: white;\n"
+"border: 3px solid #555555;\n"
+"border-radius: 10px")
+        self.btn_save_data.setObjectName("btn_save_data")
 
         self.retranslateUi(Calendar)
         QtCore.QMetaObject.connectSlotsByName(Calendar)
@@ -57,6 +72,7 @@ class Ui_Calendar(object):
         _translate = QtCore.QCoreApplication.translate
         Calendar.setWindowTitle(_translate("Calendar", "Migoto/Calendar"))
         self.header.setText(_translate("Calendar", "Migoto/Calendar"))
+        self.btn_save_data.setText(_translate("Calendar", "Save data in .txt"))
 
 
 if __name__ == "__main__":
