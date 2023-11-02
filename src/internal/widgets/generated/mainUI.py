@@ -22,7 +22,7 @@ class Ui_Migoto(object):
         self.centralwidget = QtWidgets.QWidget(Migoto)
         self.centralwidget.setObjectName("centralwidget")
         self.header = QtWidgets.QLabel(self.centralwidget)
-        self.header.setGeometry(QtCore.QRect(0, 70, 800, 61))
+        self.header.setGeometry(QtCore.QRect(0, 50, 800, 61))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NP-B")
         font.setPointSize(-1)
@@ -35,7 +35,7 @@ class Ui_Migoto(object):
         self.header.setAlignment(QtCore.Qt.AlignCenter)
         self.header.setObjectName("header")
         self.header_2 = QtWidgets.QLabel(self.centralwidget)
-        self.header_2.setGeometry(QtCore.QRect(0, 50, 800, 30))
+        self.header_2.setGeometry(QtCore.QRect(0, 20, 800, 30))
         font = QtGui.QFont()
         font.setFamily("UD Digi Kyokasho NK-B")
         font.setPointSize(-1)
@@ -115,6 +115,20 @@ class Ui_Migoto(object):
 "color: #222222;\n"
 "border: 3px solid #555555;")
         self.btn_textops.setObjectName("btn_textops")
+        self.btn_calendar = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_calendar.setGeometry(QtCore.QRect(420, 310, 341, 51))
+        font = QtGui.QFont()
+        font.setFamily("UD Digi Kyokasho NK-B")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btn_calendar.setFont(font)
+        self.btn_calendar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_calendar.setStyleSheet("font-size: 25px;\n"
+"background-color: white;\n"
+"color: #222222;\n"
+"border: 3px solid #555555;")
+        self.btn_calendar.setObjectName("btn_calendar")
         Migoto.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Migoto)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
@@ -137,6 +151,7 @@ class Ui_Migoto(object):
         self.btn_os.setText(_translate("Migoto", "About current system"))
         self.btn_makoto.setText(_translate("Migoto", "Makoto"))
         self.btn_textops.setText(_translate("Migoto", "TextOperations"))
+        self.btn_calendar.setText(_translate("Migoto", "Calendar"))
 
 
 if __name__ == "__main__":

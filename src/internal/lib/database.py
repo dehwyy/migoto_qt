@@ -110,3 +110,15 @@ class Database():
 
         # found => update
         self.update_token(user_id, token)
+
+    def delete_token(self, username) -> None:
+        self.conn.execute("""
+                          DELETE FROM users_token
+                          WHERE user_id in (
+                              SELECT users_data.user_id FROM users_data
+                              INNER JOIN users_token
+                              ON users_data.user_id = users_token.user_id
+                              WHERE users_data.username = ?
+                          )
+                          """, (username, ))
+        self.conn.commit()

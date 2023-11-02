@@ -11,93 +11,93 @@ from internal.lib.twirp_client import TwirpClient
 _sym_db = _symbol_database.Default()
 
 
-class HashmapServer(TwirpServer):
+class HashmapRPCServer(TwirpServer):
 
     def __init__(self, *args, service, server_path_prefix="/twirp"):
         super().__init__(service=service)
-        self._prefix = F"{server_path_prefix}/hashmap.Hashmap"
+        self._prefix = F"{server_path_prefix}/hashmap.HashmapRPC"
         self._endpoints = {
             "GetItems": Endpoint(
-                service_name="Hashmap",
+                service_name="HashmapRPC",
                 name="GetItems",
                 function=getattr(service, "GetItems"),
-                input=_sym_db.GetSymbol("hashmap.UserId"),
-                output=_sym_db.GetSymbol("hashmap.Items"),
+                input=_sym_db.GetSymbol("hashmap.GetItemsPayload"),
+                output=_sym_db.GetSymbol("hashmap.GetItemsResponse"),
             ),
             "GetTags": Endpoint(
-                service_name="Hashmap",
+                service_name="HashmapRPC",
                 name="GetTags",
                 function=getattr(service, "GetTags"),
-                input=_sym_db.GetSymbol("hashmap.UserId"),
-                output=_sym_db.GetSymbol("hashmap.TagsResponse"),
+                input=_sym_db.GetSymbol("general.UserId"),
+                output=_sym_db.GetSymbol("hashmap.GetTagsResponse"),
             ),
             "CreateItem": Endpoint(
-                service_name="Hashmap",
+                service_name="HashmapRPC",
                 name="CreateItem",
                 function=getattr(service, "CreateItem"),
-                input=_sym_db.GetSymbol("hashmap.Item"),
-                output=_sym_db.GetSymbol("hashmap.ItemId"),
+                input=_sym_db.GetSymbol("hashmap.CreateItemPayload"),
+                output=_sym_db.GetSymbol("hashmap.CreateItemResponse"),
             ),
             "RemoveItem": Endpoint(
-                service_name="Hashmap",
+                service_name="HashmapRPC",
                 name="RemoveItem",
                 function=getattr(service, "RemoveItem"),
-                input=_sym_db.GetSymbol("hashmap.ItemId"),
-                output=_sym_db.GetSymbol("google.protobuf.Empty"),
+                input=_sym_db.GetSymbol("hashmap.RemoveItemPayload"),
+                output=_sym_db.GetSymbol("general.IsSuccess"),
             ),
             "EditItem": Endpoint(
-                service_name="Hashmap",
+                service_name="HashmapRPC",
                 name="EditItem",
                 function=getattr(service, "EditItem"),
-                input=_sym_db.GetSymbol("hashmap.UpdateItem"),
-                output=_sym_db.GetSymbol("google.protobuf.Empty"),
+                input=_sym_db.GetSymbol("hashmap.EditItemPayload"),
+                output=_sym_db.GetSymbol("general.IsSuccess"),
             ),
         }
 
 
-class HashmapClient(TwirpClient):
+class HashmapRPCClient(TwirpClient):
 
     def GetItems(self, *args, ctx, request, server_path_prefix="/twirp", **kwargs):
         return self._make_request(
-            url=F"{server_path_prefix}/hashmap.Hashmap/GetItems",
+            url=F"{server_path_prefix}/hashmap.HashmapRPC/GetItems",
             ctx=ctx,
             request=request,
-            response_obj=_sym_db.GetSymbol("hashmap.Items"),
+            response_obj=_sym_db.GetSymbol("hashmap.GetItemsResponse"),
             **kwargs,
         )
 
     def GetTags(self, *args, ctx, request, server_path_prefix="/twirp", **kwargs):
         return self._make_request(
-            url=F"{server_path_prefix}/hashmap.Hashmap/GetTags",
+            url=F"{server_path_prefix}/hashmap.HashmapRPC/GetTags",
             ctx=ctx,
             request=request,
-            response_obj=_sym_db.GetSymbol("hashmap.TagsResponse"),
+            response_obj=_sym_db.GetSymbol("hashmap.GetTagsResponse"),
             **kwargs,
         )
 
     def CreateItem(self, *args, ctx, request, server_path_prefix="/twirp", **kwargs):
         return self._make_request(
-            url=F"{server_path_prefix}/hashmap.Hashmap/CreateItem",
+            url=F"{server_path_prefix}/hashmap.HashmapRPC/CreateItem",
             ctx=ctx,
             request=request,
-            response_obj=_sym_db.GetSymbol("hashmap.ItemId"),
+            response_obj=_sym_db.GetSymbol("hashmap.CreateItemResponse"),
             **kwargs,
         )
 
     def RemoveItem(self, *args, ctx, request, server_path_prefix="/twirp", **kwargs):
         return self._make_request(
-            url=F"{server_path_prefix}/hashmap.Hashmap/RemoveItem",
+            url=F"{server_path_prefix}/hashmap.HashmapRPC/RemoveItem",
             ctx=ctx,
             request=request,
-            response_obj=_sym_db.GetSymbol("google.protobuf.Empty"),
+            response_obj=_sym_db.GetSymbol("general.IsSuccess"),
             **kwargs,
         )
 
     def EditItem(self, *args, ctx, request, server_path_prefix="/twirp", **kwargs):
         return self._make_request(
-            url=F"{server_path_prefix}/hashmap.Hashmap/EditItem",
+            url=F"{server_path_prefix}/hashmap.HashmapRPC/EditItem",
             ctx=ctx,
             request=request,
-            response_obj=_sym_db.GetSymbol("google.protobuf.Empty"),
+            response_obj=_sym_db.GetSymbol("general.IsSuccess"),
             **kwargs,
         )

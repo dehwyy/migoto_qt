@@ -11,6 +11,9 @@ update-deps:
 	python -m pip freeze > requirements.txt
 
 gen-proto:
+	protoc --python_out=./src/generated --experimental_allow_proto3_optional --twirpy_out=./src/generated ./src/proto/general.proto && \
+	mv src/generated/src/proto/general_pb2.py src/generated/general_pb2.py && \
+  mv src/generated/src/proto/general_twirp.py src/generated/general_twirp.py && \
 	protoc --python_out=./src/generated --twirpy_out=./src/generated ./src/proto/hashmap.proto && \
 	mv src/generated/src/proto/hashmap_pb2.py src/generated/hashmap_pb2.py && \
   mv src/generated/src/proto/hashmap_twirp.py src/generated/hashmap_twirp.py && \

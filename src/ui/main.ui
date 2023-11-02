@@ -26,7 +26,7 @@ color: white;
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>70</y>
+      <y>50</y>
       <width>800</width>
       <height>61</height>
      </rect>
@@ -55,7 +55,7 @@ color: white;
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>50</y>
+      <y>20</y>
       <width>800</width>
       <height>30</height>
      </rect>
@@ -226,6 +226,36 @@ border: 3px solid #555555;</string>
     </property>
     <property name="text">
      <string>TextOperations</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_calendar">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>310</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>UD Digi Kyokasho NK-B</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 25px;
+background-color: white;
+color: #222222;
+border: 3px solid #555555;</string>
+    </property>
+    <property name="text">
+     <string>Calendar</string>
     </property>
    </widget>
   </widget>

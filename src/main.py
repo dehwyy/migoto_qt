@@ -1,7 +1,7 @@
 # internal
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtGui import QIcon, QPixmap
 from internal.widgets.generated.mainUI import Ui_Migoto
 from config import DEFAULT_WINDOW_SIZE
 from internal.lib.database import Database
@@ -11,10 +11,9 @@ from internal.widgets.dict import Dict
 from internal.widgets.random import Random
 from internal.widgets.os import OS
 from internal.widgets.textops import TextOps
+from internal.widgets.calendar import Calendar
 from internal.widgets.makoto import Makoto
 
-# external imports
-from dotenv import load_dotenv
 
 # init db
 database = Database("src/internal/database/makoto.sqlite")
@@ -27,18 +26,24 @@ class App(QMainWindow,  Ui_Migoto):
         self.init_ui()
         self.main_init()
 
-        # load .env
-        found = load_dotenv()
-        if not found:
-            raise FileNotFoundError(".env file not found")
-
-        # init UI inherited by UI_Migoto
         self.setupUi(self)
         self.btn_translate.clicked.connect(lambda: self.w_dict.show())
         self.btn_random.clicked.connect(lambda: self.w_random.show())
         self.btn_os.clicked.connect(lambda: self.w_os.show())
         self.btn_textops.clicked.connect(lambda: self.w_textops.show())
+        self.btn_calendar.clicked.connect(lambda: self.w_calendar.show())
         self.btn_makoto.clicked.connect(lambda: self.w_makoto.show())
+
+        # set image
+        LOGO_HEIGHT = 100
+
+        # define image
+        self.logo = QPixmap('makoto_logo.jpg').scaled(LOGO_HEIGHT, LOGO_HEIGHT)
+
+        # attach it to label
+        self.label_logo = QLabel(self)
+        self.label_logo.setPixmap(self.logo)
+        self.label_logo.setGeometry(350, 105, LOGO_HEIGHT, LOGO_HEIGHT)
 
     def init_ui(self):
         # main window
@@ -51,6 +56,7 @@ class App(QMainWindow,  Ui_Migoto):
         self.w_random = Random()
         self.w_os = OS()
         self.w_textops = TextOps()
+        self.w_calendar = Calendar()
         self.w_makoto = Makoto(database)
 
 
