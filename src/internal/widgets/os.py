@@ -23,7 +23,7 @@ class OS(QWidget,  Ui_os):
         self.btn_home.clicked.connect(self.get_home)
 
     def init_ui(self):
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('assets/icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
     # ! actions

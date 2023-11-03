@@ -43,7 +43,7 @@ class TextOps(QWidget,  Ui_TextOperations):
         self.btn_compile.clicked.connect(self.compile)
 
     def init_ui(self):
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('assets/icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
     def compile(self):

@@ -28,7 +28,7 @@ class Random(QWidget,  Ui_Random):
         self.btn_copy.clicked.connect(self.copy_output)
 
     def init_ui(self):
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('assets/icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
     # ! actions

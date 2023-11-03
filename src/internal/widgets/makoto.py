@@ -33,7 +33,7 @@ class Makoto(QWidget,  Ui_Makoto):
         self.btn_logout.clicked.connect(self.logout)
 
     def init_ui(self):
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('assets/icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
     # actions

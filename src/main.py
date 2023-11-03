@@ -38,7 +38,8 @@ class App(QMainWindow,  Ui_Migoto):
         LOGO_HEIGHT = 100
 
         # define image
-        self.logo = QPixmap('makoto_logo.jpg').scaled(LOGO_HEIGHT, LOGO_HEIGHT)
+        self.logo = QPixmap(
+            'assets/makoto_logo.jpg').scaled(LOGO_HEIGHT, LOGO_HEIGHT)
 
         # attach it to label
         self.label_logo = QLabel(self)
@@ -47,7 +48,7 @@ class App(QMainWindow,  Ui_Migoto):
 
     def init_ui(self):
         # main window
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('assets/icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
     def main_init(self):

@@ -17,7 +17,7 @@ class Calendar(QWidget,  Ui_Calendar):
         self.btn_save_data.clicked.connect(self.save)
 
     def init_ui(self):
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('assets/icon.png'))
         self.setFixedSize(*DEFAULT_WINDOW_SIZE)
 
     def save(self):
