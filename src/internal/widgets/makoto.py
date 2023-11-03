@@ -102,8 +102,10 @@ class Makoto(QWidget,  Ui_Makoto):
         try:
             token = f"Bearer {self.db.get_token(user_id)}"
 
+            # create client
             client = HashmapRPCClient("http://localhost:4000")
             ctx = Context()
+            # attach authorization header
             ctx.set_header("Authorization", token)
 
             response, _ = client.GetItems(ctx=ctx, request=GetItemsPayload(
@@ -113,7 +115,7 @@ class Makoto(QWidget,  Ui_Makoto):
             ), server_path_prefix="/hashmap")
 
             items = ["", "", "", "", ""]
-            for i, item in enumerate(response.items):
+            for i, item in enumerate(reversed(response.items)):
                 if i == 5:
                     break
                 items[i] = f"{item.key} - {item.value}"
@@ -126,7 +128,7 @@ class Makoto(QWidget,  Ui_Makoto):
             ), server_path_prefix="/hashmap")
 
             tags = ["", "", "", "", ""]
-            for i, tag in enumerate(response.tags):
+            for i, tag in enumerate(reversed(response.tags)):
                 if i == 5:
                     break
                 tags[i] = f"{tag.text} with {tag.usages} usages"

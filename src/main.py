@@ -43,7 +43,7 @@ class App(QMainWindow,  Ui_Migoto):
         # attach it to label
         self.label_logo = QLabel(self)
         self.label_logo.setPixmap(self.logo)
-        self.label_logo.setGeometry(350, 105, LOGO_HEIGHT, LOGO_HEIGHT)
+        self.label_logo.setGeometry(350, 110, LOGO_HEIGHT, LOGO_HEIGHT)
 
     def init_ui(self):
         # main window
