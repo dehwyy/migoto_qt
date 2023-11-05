@@ -176,7 +176,7 @@ border-radius: 10px</string>
 </string>
    </property>
    <property name="text">
-    <string>Available languages: 
+    <string>Available languages:
 Russian, English</string>
    </property>
    <property name="alignment">

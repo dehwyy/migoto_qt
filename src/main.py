@@ -11,12 +11,13 @@ from internal.widgets.generated.mainUI import Ui_Migoto
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 import sys
+import os
 
 # widgets
 
 
 # init db
-database = Database("internal/database/makoto.sqlite")
+database = Database(os.path.join("internal", "database", "migoto.sqlite"))
 
 
 class App(QMainWindow,  Ui_Migoto):
