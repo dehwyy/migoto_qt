@@ -3,7 +3,7 @@ import requests
 
 from twirp import exceptions, errors
 
-
+# originally it was client from twirp library (from pip) but I changed marked lines to my own
 class TwirpClient(object):
     def __init__(self, address, timeout=5):
         self._address = address
@@ -23,6 +23,9 @@ class TwirpClient(object):
             if resp.status_code == 200:
                 response = response_obj()
                 response.ParseFromString(resp.content)
+                # in the source, it was returning only response (content)
+                # Add the headers to return values
+                # it was like: `return response`
                 return (response, resp.headers)
             try:
                 raise exceptions.TwirpServerException.from_json(resp.json())
@@ -54,7 +57,8 @@ class TwirpClient(object):
             # twirp uses POST which should not redirect
             code = errors.Errors.Internal
             location = resp.headers.get('location')
-            message = 'unexpected HTTP status code %d "%s" received, Location="%s"' % (
+            message = 'unexpected HTTP status code %d "%s" received, \
+                Location="%s"' % (
                 resp.status_code,
                 resp.reason,
                 location,

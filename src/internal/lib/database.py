@@ -54,7 +54,8 @@ class Database():
 
     def insert_user(self, user_id, username) -> None:
         self.conn.execute("""
-                          INSERT INTO users_data (user_id, username) VALUES (?, ?)
+                          INSERT INTO users_data (user_id, username)
+                          VALUES (?, ?)
                           """, (user_id, username))
         self.conn.commit()
 

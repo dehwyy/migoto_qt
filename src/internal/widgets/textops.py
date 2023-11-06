@@ -20,24 +20,29 @@ class TextOps(QWidget,  Ui_TextOperations):
         # Init variables
         self.selected_mode = None
 
-        # App initt
+        # App init
         self.init_ui()
 
-        # init UI inherited by UI_Migoto
+        # init UI inherited by generated UI
         self.setupUi(self)
 
         # ! setup listeners
         # mode setters
         self.btn_remove_symbol.clicked.connect(
-            lambda: self.set_mode(self.btn_remove_symbol, OPERATIONS["REMOVE_SYMBOL"]))
+            lambda: self.set_mode(self.btn_remove_symbol, \
+                                  OPERATIONS["REMOVE_SYMBOL"]))
         self.btn_change_order.clicked.connect(
-            lambda: self.set_mode(self.btn_change_order, OPERATIONS["CHANGE_ORDER"]))
+            lambda: self.set_mode(self.btn_change_order, \
+                                  OPERATIONS["CHANGE_ORDER"]))
         self.btn_length_str.clicked.connect(
-            lambda: self.set_mode(self.btn_length_str, OPERATIONS["GET_LENGTH"]))
+            lambda: self.set_mode(self.btn_length_str, \
+                                  OPERATIONS["GET_LENGTH"]))
         self.btn_reverse_str.clicked.connect(
-            lambda: self.set_mode(self.btn_reverse_str, OPERATIONS["REVERSE"]))
+            lambda: self.set_mode(self.btn_reverse_str, \
+                                  OPERATIONS["REVERSE"]))
         self.btn_makoto_camel.clicked.connect(
-            lambda: self.set_mode(self.btn_makoto_camel, OPERATIONS["TRUE_CAMEL_CASE"]))
+            lambda: self.set_mode(self.btn_makoto_camel, \
+                                  OPERATIONS["TRUE_CAMEL_CASE"]))
 
         # compile
         self.btn_compile.clicked.connect(self.compile)

@@ -6,6 +6,8 @@ from config import DEFAULT_WINDOW_SIZE
 from internal.lib.errors import InvalidInputError
 import requests as req
 
+API_KEY="dict.1.1.20231022T070342Z.ed96950eca1b7bd5"+ \
+    ".2092598dc924cb780f0086537440ff74fa15bccf"
 
 class Dict(QWidget,  Ui_Dictionary):
     def __init__(self):
@@ -38,14 +40,14 @@ class Dict(QWidget,  Ui_Dictionary):
     def get_word(self, word: str) -> str:
         # @see `https://yandex.com/dev/dictionary/doc/dg/reference/lookup.html`
 
-        key = "dict.1.1.20231022T070342Z.ed96950eca1b7bd5.2092598dc924cb780f0086537440ff74fa15bccf"
         lang = ""
         try:
             lang = self.infer_language(word)
         except InvalidInputError as e:
             return str(e)
 
-        url = f"https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key={key}&lang={lang}&text={word}"
+        url = "https://dictionary.yandex.net/api/v1/dicservice.json/"+ \
+            f"lookup?key={API_KEY}&lang={lang}&text={word}"
 
         response = req.get(url)
         dict_body_response = response.json()
@@ -60,7 +62,8 @@ class Dict(QWidget,  Ui_Dictionary):
                 if len(result_words) == 5:
                     return ", ".join(result_words)
 
-        return ", ".join(result_words) if result_words else [f"Sorry, I don't know word `${word}`"]
+        return ", ".join(result_words) if result_words else \
+            [f"Sorry, I don't know word `${word}`"]
 
     def infer_language(self, word: str) -> str:
         if len(word) == 0:
@@ -70,7 +73,8 @@ class Dict(QWidget,  Ui_Dictionary):
 
         if ord("a") <= ord(first_letter) <= ord("z"):
             return "en-ru"
-        elif ord("а") <= ord(first_letter) <= ord("я") or ord(first_letter) == ord("ё"):
+        elif ord("а") <= ord(first_letter) <= ord("я") or \
+            ord(first_letter) == ord("ё"):
             return "ru-en"
 
         # default translation

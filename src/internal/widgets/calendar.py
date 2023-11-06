@@ -26,8 +26,10 @@ class Calendar(QWidget,  Ui_Calendar):
 
         if ok_pressed:
             with open(filePath, "w") as f:
-                date_to_write_v1 = self.calendarWidget.selectedDate().toString('dd.MM.yyyy')
-                date_to_write_v2 = self.calendarWidget.selectedDate().toString('yyyy-MM-dd')
+                date_to_write_v1 = \
+                    self.calendarWidget.selectedDate().toString('dd.MM.yyyy')
+                date_to_write_v2 = \
+                    self.calendarWidget.selectedDate().toString('yyyy-MM-dd')
                 f.write(str(date_to_write_v1))
                 f.write("\t" + str(date_to_write_v2))
 

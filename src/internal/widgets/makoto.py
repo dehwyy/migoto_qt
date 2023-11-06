@@ -44,7 +44,8 @@ class Makoto(QWidget,  Ui_Makoto):
 
         try:
             client = AuthRPCClient("http://localhost:4000")
-            response, headers = client.SignIn(ctx=Context(), request=SignInRequest(
+            response, headers = \
+                client.SignIn(ctx=Context(), request=SignInRequest(
                 credentials={
                     "username": username,
                     "password": password
