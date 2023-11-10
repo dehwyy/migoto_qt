@@ -1,6 +1,7 @@
 from os import listdir
 import subprocess
 
+# generates ui.py file from .ui
 # listdir returns both dirs and files, but in this case only files with ext .ui would exist
 for file in listdir("./src/ui"):
     filename = file.split(".")[0]
